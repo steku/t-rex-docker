@@ -15,7 +15,7 @@ RUN ln -sf /usr/share/zoneinfo/America/Toronto /etc/localtime; \
 
 RUN useradd miner -u 6666 -d /home/miner -m
 
-RUN curl -L https://github.com/trexminer/T-Rex/releases/download/0.20.1/t-rex-0.20.1-linux.tar.gz -o t-rex.tar.gz
+RUN curl -L https://github.com/trexminer/T-Rex/releases/download/0.20.3/t-rex-0.20.3-linux.tar.gz -o t-rex.tar.gz
 RUN tar xvzf t-rex.tar.gz -C /home/miner; \
     chmod +x /home/miner/t-rex
 
