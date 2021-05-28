@@ -1,7 +1,7 @@
 #FROM ubuntu:20.04
 FROM ubuntu
 
-ARG ver
+ARG ver=0.20.4
 
 # Install default apps
 RUN export DEBIAN_FRONTEND=noninteractive; \
