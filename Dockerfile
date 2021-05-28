@@ -1,6 +1,8 @@
 #FROM ubuntu:20.04
 FROM ubuntu
 
+ARG ver
+
 # Install default apps
 RUN export DEBIAN_FRONTEND=noninteractive; \
     apt-get update; \
@@ -15,7 +17,8 @@ RUN ln -sf /usr/share/zoneinfo/America/Toronto /etc/localtime; \
 
 RUN useradd miner -u 6666 -d /home/miner -m
 
-RUN curl -L https://github.com/trexminer/T-Rex/releases/download/0.20.3/t-rex-0.20.3-linux.tar.gz -o t-rex.tar.gz
+#RUN curl -L "https://github.com/trexminer/T-Rex/releases/download/${ver}/t-rex-${ver}-linux.tar.gz" -o t-rex.tar.gz
+RUN curl -L https://trex-miner.com/download/t-rex-${ver}-linux.tar.gz -o t-rex.tar.gz
 RUN tar xvzf t-rex.tar.gz -C /home/miner; \
     chmod +x /home/miner/t-rex
 
